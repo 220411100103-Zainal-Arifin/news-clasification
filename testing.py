@@ -37,8 +37,8 @@ def web_driver():
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
 
-    # Menentukan versi msedgedriver yang sesuai dengan versi Edge
-    service = EdgeService(EdgeChromiumDriverManager(version="129.0.2792.89").install())
+    # Menggunakan versi terbaru yang tersedia
+    service = EdgeService(EdgeChromiumDriverManager(version="latest").install())
     driver = webdriver.Edge(service=service, options=options)
     return driver
 
