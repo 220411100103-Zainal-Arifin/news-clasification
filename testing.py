@@ -33,12 +33,11 @@ from sklearn import preprocessing  # Impor preprocessing
 
 def web_driver():
     options = EdgeOptions()
-    options.add_argument('--headless')  # Jika ingin mode tanpa antarmuka grafis
+    options.add_argument('--headless')  # Tambahkan jika Anda tidak ingin antarmuka grafis
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
 
-    # Menggunakan versi terbaru yang tersedia
-    service = EdgeService(EdgeChromiumDriverManager(version="latest").install())
+    service = EdgeService(EdgeChromiumDriverManager().install())
     driver = webdriver.Edge(service=service, options=options)
     return driver
 
